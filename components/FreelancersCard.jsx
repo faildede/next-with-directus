@@ -5,8 +5,8 @@ const assetsUrl = process.env.NEXT_PUBLIC_ASSETS_URL
 export default function FreelancersCard({image, freelancer_name,salary, exp, category, slug, time, time1}) {
   return (
        <div className="">
-         <div className="flex mx-auto my-auto">
-            <div  className='bg-white rounded-lg mx-2 py-7 px-14 container mt-2 '>
+         <div className="flex container mx-auto my-auto">
+            <div  className='mx-8 bg-white rounded-lg py-7 px-14 container md:mx-2 mt-2 '>
             <div className='container mx-auto '>
              <div className='container mx-auto flex justify-between'>
              <p className='text-[#92400E] bg-[#FEF3C7] font-weight text-base px-2 rounded-full'>{time}</p>

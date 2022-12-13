@@ -24,7 +24,7 @@ function SignIn({ csrfToken }) {
       setError(true);
       console.log(res);
     } else {
-      router.push("/user-area");
+      router.push('/user-area');
     }
   };
 
@@ -58,7 +58,7 @@ function SignIn({ csrfToken }) {
               <input
                 type="text"
                 name="name"
-                className="outline-none rounded-3xl py-2 pr-80 pl-2 border border-gray-300"
+                className="outline-none rounded-3xl py-2 md:pr-80 pl-2 border border-gray-300"
               />
             </div>
             <div className="items-center">
@@ -68,7 +68,7 @@ function SignIn({ csrfToken }) {
               <input
                 type="email"
                 name="email"
-                className="outline-none rounded-3xl py-2 pr-80 pl-2 border border-gray-300"
+                className="outline-none rounded-3xl py-2 md:pr-80 pl-2 border border-gray-300"
               />
             </div>
             <div className="items-center">
@@ -78,21 +78,29 @@ function SignIn({ csrfToken }) {
               <input
                 type="password"
                 name="password"
-                className="outline-none rounded-3xl py-2 pr-80 pl-2 border border-gray-300"
+                className="outline-none rounded-3xl py-2 md:pr-80 pl-2 border border-gray-300"
               />
             </div>
 
+            {error && (
+             <div class="bg-red-600 mt-6 shadow-lg mx-auto w-96 max-w-full text-sm pointer-events-auto bg-clip-padding rounded-lg block mb-3" id="static-example" role="alert" aria-live="assertive" aria-atomic="true" data-mdb-autohide="false">
+             <div class="bg-red-600 flex justify-between items-center py-2 px-3 bg-clip-padding border-b border-red-500 rounded-t-lg">
+               <p class="font-bold text-lg text-white flex items-center">
+                 
+                 У вас возникли некоторые проблемы</p>
+             </div>
+             <div class="p-3 bg-red-600 rounded-b-lg break-words text-white">
+               Возможно вы ввели неправильно пароль или почту
+             </div>
+           </div>
+          )}
             <div className="grid place-content-center my-6 mt-8">
-              <button className="text-lg rounded-3xl text-center  px-12 py-2 bg-[#F1DF6F]">
+              <button type="submit" className="text-lg rounded-3xl text-center  px-12 py-2 bg-[#F1DF6F]">
                 Войти
               </button>
             </div>
           </form>
-          {error && (
-            <div className="text-red-700 text-center z-10">
-              Неправильный Email или Пароль
-            </div>
-          )}
+        
         </div>
       </div>
       <Footer />

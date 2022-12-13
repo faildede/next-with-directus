@@ -1,4 +1,5 @@
-function Checfbox({label, id, getSelectedCategories}) {
+function Checfbox({label, id, getSelectedCategories, getStartState}) {
+
     return ( 
         <div>
              <div class="form-check">
@@ -8,7 +9,7 @@ function Checfbox({label, id, getSelectedCategories}) {
               type="radio"
               name="flexRadioDefault"
               id="flexRadioDefault1"
-              onChange={e => getSelectedCategories(e.target.value)}
+              onChange={e => getSelectedCategories(+ e.target.value)}
             />
             <label>
             {label}

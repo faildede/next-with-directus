@@ -6,7 +6,7 @@ function Candidate() {
     return ( 
         <div>
             <Header />
-                <div className="container mx-auto flex">
+                <div className="container mx-auto w-full flex">
                 <AllUser />
                 </div>
             <Footer/>

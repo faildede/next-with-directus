@@ -2,10 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { signOut, useSession } from 'next-auth/react'
 import Result from "./Result";
-
-import search from '../queries/search'
 import {useState} from 'react'
-import { useQuery } from "react-query";
+
 
 
 
@@ -48,21 +46,10 @@ const Header = () => {
               <li className="text-lg font-medium">
                 <Link href="/AboutService">О сервисе</Link>
               </li >
-              <li className="text-lg font-medium">
-                <Link href="/">Портал</Link>
-              </li>
             </ul>
           </div>
         </div>
-        <div className=" flex justify-between ">
-
-          <div className=" md:hidden">
-            <Image src='/assets/Menubutton.svg'  width={64}
-              height={0} onClick={() => setOp(!op)} />
-          </div>
-
-       
-        
+        <div className=" flex justify-between ">       
           <div className="">
             {" "}
             {/* btn */}
@@ -75,24 +62,28 @@ const Header = () => {
                  <button className="px-8 py-1" >Войти</button>
                </div>
             )}
-         
-           
             <div> {/*If person log in */}</div>
+          </div>
+          <div className=" md:hidden">
+          {op ? <Image src='/assets/X.svg' width={64}
+           height={0} onClick={() => setOp(!op)} /> : 
+           <Image src='/assets/Menubutton.svg'  width={64}
+           height={0} onClick={() => setOp(!op)} />} 
           </div>
         </div>
       </div>
       <div className="hidden md:container md:mx-auto md:py-4 md:flex md:justify-between">
         <ul className="flex ">
-          <li className="px-2">
+          <li className="px-2 ">
             Маркетологи
           </li>
-          <li className="px-2">
+          <li className="px-2 ">
             Backend-разработчики
           </li>
-          <li className="px-2">
+          <li className="px-2 ">
             Дизайнеры
           </li>
-          <li className="px-2">
+          <li className="px-2 ">
            Менеджеры по продажам
           </li>
         </ul>
@@ -101,31 +92,28 @@ const Header = () => {
       {
           op ? <div className="bg-white absolute w-full py-4 pb-8 z-50 md:hidden">
               <ul className="container mx-auto border border-y">
-              <li className="my-2 px-2">
+              <li className="my-2 px-2 font-normal text-xl">
                 <Link href="/Candidate">Найти кандидата</Link>
               </li>
-              <li className="my-2 px-2">
+              <li className="my-2 px-2 font-normal text-xl">
                 {" "}
                 <Link href="/Getbaza">Попасть в базу</Link>
               </li>
-              <li className="my-2 px-2">
+              <li className="my-2 px-2 font-normal text-xl">
                 <Link href="/AboutService">О сервисе</Link>
-              </li>
-              <li className="my-2 px-2">
-                <Link href="/">Портал</Link>
               </li>
             </ul>
             <ul className=" ">
-          <li className="px-2 my-2">
+          <li className="px-2 my-2 font-normal text-xl">
             Маркетологи
           </li>
-          <li className="px-2 my-2">
+          <li className="px-2 my-2 font-normal text-xl">
             Backend-разработчики
           </li>
-          <li className="px-2 my-2">
+          <li className="px-2 my-2 font-normal text-xl">
             Дизайнеры
           </li>
-          <li className="px-2 my-2">
+          <li className="px-2 my-2 font-normal text-xl">
            Менеджеры по продажам
           </li>
         </ul>

@@ -9,14 +9,14 @@ import { useRouter } from 'next/router'
 function SignUp() {
     const router = useRouter();
     const signUpMutation = useMutation((newUser) => {
-        setData(createNewUser, {data: newUser}, '/system').then((response) => {
+        setData(createNewUser, {data: newUser}, '/system' ).then((response) => {
             console.log(response);
         });
         if (signUpMutation?.error) {
             setError(true);
             console.log(res);
           } else {
-            router.push("/user-area");
+            router.push("/sign-in");
           }
     });
 
@@ -33,6 +33,8 @@ function SignUp() {
             status:'active',
             provider:''
         })
+
+        console.log(signUpMutation);
     }
 
     return ( 
@@ -47,7 +49,7 @@ function SignUp() {
                     <form className='container mx-auto my-auto grid place-content-center' noValidate onSubmit={(e) => handleSubmit(e)}>
                         <div className='items-center'>
                             <p className='font-normal text-lg ml-2'>Имя <span className='text-red-600'>*</span></p>
-                            <input type="text" name='name' className='outline-none rounded-3xl py-2 pr-80 pl-2 border border-gray-300' />
+                            <input type="text" name='name' className='outline-none rounded-3xl py-2 md:pr-80 pl-2 border border-gray-300' />
                         </div>
                         <div className='items-center'>
                             <p className='font-normal text-lg ml-2'>Email <span className='text-red-600'>*</span></p>

@@ -22,7 +22,7 @@ export default function FirstBody() {
                
             </div>
             <div >{/*img */}
-                <Image className='invisible md:visible' src="/assets/main_image.svg" height={500} width={500} />
+                <Image className='hidden md:block' src="/assets/main_image.svg" height={500} width={500} />
             </div>
         </div>
     )

@@ -9,6 +9,7 @@ export const SingleFreelancerQuery = `
             work_API
             time
             time1
+            resum
             featured_image {
                 id
             }
